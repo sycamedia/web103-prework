@@ -4,7 +4,7 @@ import { NavLink, useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../client.js'
 
 
-function CreatorViewSingle({refresh}) {
+function CreatorViewSingle({ refresh }) {
     let selectedID = useParams().id
     let navigate = useNavigate()
     console.log(selectedID)
@@ -44,7 +44,7 @@ function CreatorViewSingle({refresh}) {
 
     async function confirmDelete() {
         console.log("Deleting creator with ID:", selectedID);
-        const {data, error} = await supabase
+        const { data, error } = await supabase
             .from('creators')
             .delete()
             .eq('id', selectedID);
@@ -58,16 +58,18 @@ function CreatorViewSingle({refresh}) {
     }
 
     return (
-        <div>
+        <div className='single-creator'>
+            <h2>{cardData.name}</h2>
+
             {cardData.imageURL ? <img
                 src={cardData.imageURL}
+                className='feature-img'
             /> : "No image available"}
-            <h3>{cardData.name}</h3>
             <p>{cardData.description}</p>
-            <a href={cardData.url}><button>Visit {cardData.name}'s page</button></a>
-            <NavLink to={`/edit/${selectedID}`}><button>Edit</button></NavLink>
-            <button id='delete' onClick={handleDelete}>Delete</button>
-            <NavLink to="/"><button>Back</button></NavLink>
+            {cardData.url ? <a href={cardData.url} target='_blank'><button>&#11016; Visit {cardData.name}'s page</button></a> : ''}
+                <NavLink to={`/edit/${selectedID}`}><button>&#9998; Edit</button></NavLink>
+                <button id='delete' onClick={handleDelete}>&#10008; Delete</button>
+            <NavLink to="/"><button>&#11013; Back to creators</button></NavLink>
         </div>
     )
 }
