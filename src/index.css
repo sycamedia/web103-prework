@@ -104,7 +104,7 @@ img {
   min-height: 300px;
   display: flex;
   flex-direction: column;
-  box-shadow: 8px 4px 5px #0a404f66;
+  box-shadow: 6px 6px 8px #0a404f66;
   color:rgba(255, 255, 255, 0.87)
 }
 
