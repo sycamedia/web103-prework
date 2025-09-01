@@ -79,9 +79,9 @@ function CreatorEdit({refresh}) {
                 <textarea id='description' name='description' value={creatorData.description} onChange={handleChange} rows='4'></textarea>
                 <label htmlFor='imageURL'>Image URL</label>
                 <input type='text' id='imageURL' name='imageURL' value={creatorData.imageURL} onChange={handleChange} />
-                <label>Image</label>
-                {creatorData.imageURL ? <img src={creatorData.imageURL}/> : "No image"}
-                <div className='buttonContainer'>
+                <label>Image preview</label>
+                {creatorData.imageURL ? <img src={creatorData.imageURL} class='preview-image'/> : "No image"}
+                <div className='form-button-container'>
                     <button type="submit">Submit</button>
                     <button type="button" onClick={goBack}>Cancel</button>
                 </div>

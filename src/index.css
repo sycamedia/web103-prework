@@ -166,3 +166,21 @@ img {
   margin: 10px;
   width: 50%;
 }
+
+/* ------------ EDIT FORM ------------*/
+
+form {
+  width: 100%;
+}
+
+.preview-image {
+  max-width: 50vw;
+}
+
+.form-button-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}

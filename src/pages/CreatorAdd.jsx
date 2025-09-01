@@ -54,9 +54,9 @@ function CreatorAdd ({refresh}) {
                 <textarea id='description' name='description' value={creatorData.description} onChange={handleChange} rows='4'></textarea>
                 <label htmlFor='imageURL'>Image URL</label>
                 <input type='text' id='imageURL' name='imageURL' value={creatorData.imageURL} onChange={handleChange} />
-                <label>Image</label>
+                <label>Image preview</label>
                 {creatorData.imageURL ? <img src=''/> : "No image"}
-                <div className='buttonContainer'>
+                <div className='form-button-container'>
                     <button type="submit">Submit</button>
                     <button type="button" onClick={goBack}>Cancel</button>
                 </div>
