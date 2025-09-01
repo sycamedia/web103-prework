@@ -1,15 +1,16 @@
 import React from 'react';
 import Card from '../components/Card.jsx'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function CreatorViewAll({ data }) {
-    console.log("What CreatorViewAll receives:", data);
-  
-    if (!data) {
-      return <div>Loading...</div>
-    }
-  
-    return (
+  console.log("What CreatorViewAll receives:", data);
+
+  if (!data) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div>
       <div className='CardGrid'>
         {data.map((creator) => (
           <Card
@@ -22,9 +23,10 @@ function CreatorViewAll({ data }) {
             socialURL={creator.url}
           />
         ))}
-        <NavLink to='/add'><button id='add-button'>Add creator</button></NavLink>
       </div>
-    );
-  }
+      <NavLink to='/add'><button id='add-button'>Add creator</button></NavLink>
+    </div>
+  );
+}
 
 export default CreatorViewAll

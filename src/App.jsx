@@ -30,7 +30,7 @@ function App() {
   }, [fetchData])
 
   return (
-    <div>
+    <div className='content'>
       <header>
         <h1>Creatorverse</h1>
       </header>

@@ -8,7 +8,7 @@ function Card({ creatorID, creatorName, creatorDescription, imageURL, socialURL 
             <div className='image-container'>
                 {imageURL ? <img
                     src={imageURL}
-                /> : "No image available"}
+                /> : "(No image available)"}
             </div>
             <div className='detail-container'>
                 <h3>{creatorName}</h3>
